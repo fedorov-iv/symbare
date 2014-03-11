@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="ifabrikator.router" class="IFabrikator\Bundle\CoreBundle\Component\Router">
+            <argument type="service" id="doctrine.orm.entity_manager"></argument>
+            <argument type="service" id="service_container"></argument>
+        </service>
+
+        <service id="ifabrikator.application" class="IFabrikator\Bundle\CoreBundle\Component\Application">
+            <argument type="service" id="ifabrikator.router"></argument>
+            <argument type="service" id="doctrine.orm.entity_manager"></argument>
+
+        </service>
+    </services>
+
+</container>

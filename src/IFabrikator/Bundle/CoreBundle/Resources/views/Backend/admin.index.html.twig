@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>{{ page_title }}</title>
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+</head>
+<body>
+<h1>{{ page_title }}</h1>
+<p>IFabrikator language: <b style="color:red"> "{{ language }}" </b>!</p>
+<p>IFabrikator host: <b style="color:red"> "{{ host }}" </b>!</p>
+<p>IFabrikator page url: <b style="color:red"> "{{ url }}" </b>!</p>
+<p>IFabrikator url params: <b style="color:red"> "{{ params }}" </b>!</p>
+{% block javascripts %}{% endblock %}
+</body>
+</html>

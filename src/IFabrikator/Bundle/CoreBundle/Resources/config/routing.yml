@@ -1,0 +1,24 @@
+main_lang:
+    pattern:  /{language}/
+    defaults: { _controller: IFabrikatorCoreBundle:Default:index }
+    requirements:
+        language: ru|en|de
+
+inner_lang:
+    pattern:  /{language}/{url}/
+    defaults: { _controller: IFabrikatorCoreBundle:Default:index }
+    requirements:
+        language: ru|en|de
+        url: ".+"
+
+main:
+    pattern:  /
+    defaults: { _controller: IFabrikatorCoreBundle:Default:index }
+
+inner:
+    pattern:  /{url}/
+    defaults: { _controller: IFabrikatorCoreBundle:Default:index }
+    requirements:
+        url: ".+"
+
+

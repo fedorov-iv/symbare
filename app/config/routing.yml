@@ -1,0 +1,4 @@
+# IFabrikator routes
+i_fabrikator_core:
+    resource: "@IFabrikatorCoreBundle/Resources/config/routing.yml"
+
