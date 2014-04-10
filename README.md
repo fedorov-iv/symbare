@@ -48,6 +48,31 @@ table fields:
     ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
 
 
+### Dynamic routing
+
+The classic MVC concept implies a configuration fixed route. When the request hits the route it is dispatched
+to the corresponding and again firmly fixed controller method.
+
+When building a CMS this inflexible relation between route and controller method is a problem.
+The actual web resource is structured by a site administrator with the help of
+an administrative interface. So dynamic routing becomes a must.
+
+Now what if we need several different types of content being placed on the same web page:
+i.e. a text and a feedback form? By the way, we would prefer the types of content and their
+order to be again decided by site administrator. Later we could change our mind and think of
+the feedback form for example to be placed on a different page. How do we achieve that without
+making changes to the controller source code?
+
+### Application Controller
+
+IFabrikator provides a one and only entry point for all requests - ApplicationController.
+This is a standard Symfony 2 controller class which dispatches all the requests to our
+application (site) except other standard controllers, routes to which are placed above
+the ApplicationController route in routing.yml.
+
+### Controls and the "forward" method
+
+
 2) Installation
 -------------------------------------
 
