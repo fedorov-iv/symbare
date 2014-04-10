@@ -38,7 +38,7 @@ class LoadNewsData extends AbstractFixture implements OrderedFixtureInterface {
         $manager->flush();
 
         $news = new News();
-        $news->setTitle('Новость 3');
+        $news->setTitle('News 3');
         $news->setAnnounce('News 3 announce');
         $news->setCreatedAt(new \DateTime());
         $news->setBody('News 3 body text');
