@@ -19,12 +19,33 @@ web pages (sections and subsections). A web page is a very simple structure cons
 
   * Menus
 
-  * One or several content areas
+  * One or more content areas
 
 The appearance  of a web page is determined by an html-template and css files.
 
 Thus a web page at data level can be easily presented by a number of database
 table fields:
+
+    CREATE TABLE `Page` (
+        `id` int(11) NOT NULL AUTO_INCREMENT,
+        `parent_id` int(11) DEFAULT NULL,
+        `site_id` int(11) DEFAULT NULL,
+        `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+        `language` varchar(16) COLLATE utf8_unicode_ci NOT NULL,
+        `slug` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+        `is_active` tinyint(1) NOT NULL,
+        `is_logon_required` tinyint(1) NOT NULL,
+        `url` varchar(1024) COLLATE utf8_unicode_ci NOT NULL,
+        `redirect` varchar(1024) COLLATE utf8_unicode_ci NOT NULL,
+        `meta_description` longtext COLLATE utf8_unicode_ci NOT NULL,
+        `meta_keywords` longtext COLLATE utf8_unicode_ci NOT NULL,
+        `template` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+        PRIMARY KEY (`id`),
+        KEY `IDX_B438191E727ACA70` (`parent_id`),
+        KEY `IDX_B438191EF6BD1646` (`site_id`),
+        CONSTRAINT `FK_B438191EF6BD1646` FOREIGN KEY (`site_id`) REFERENCES `Site` (`id`),
+        CONSTRAINT `FK_B438191E727ACA70` FOREIGN KEY (`parent_id`) REFERENCES `Page` (`id`)
+    ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
 
 
 2) Installation
@@ -77,7 +98,8 @@ And load the project fixtures:
 
 ### Configure your web-server
 
-Create a virtual host in your web-server config with the name of symbare.ifedor.loc (comes with fixtures)
+Create a virtual host in your web-server config with the name of symbare.ifedor.loc (comes with fixtures). You
+are free to change it afterwards.
 
 3) And some more
 --------------------------------
