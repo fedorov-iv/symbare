@@ -58,6 +58,8 @@ following command:
 
     php composer.phar install
 
+### Create database
+
 After finishing it you will have to create a database and put its connection parameters into parameters.yml
 (must be first created from parameters.yml.dist)
 
@@ -65,9 +67,15 @@ Then create database tables:
 
     php app/console doctrine:schema:update --force
 
+
+### Install fixtures
+
 And load the project fixtures:
 
     php app/console doctrine:fixtures:load
+
+
+### Configure your web-server
 
 Create a virtual host in your web-server config with the name of symbare.ifedor.loc (comes with fixtures)
 
