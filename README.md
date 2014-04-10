@@ -83,8 +83,8 @@ It can be deactivated or removed from page. A web page can contain one or more c
 even contain none. In the world of Java this kind of mini web applications is called
 portlets.
 
-Thus form the IFabrikator CMS's point of view there are pages (Page entities in program code and DB)
-which represent a site's structure and controls placed on these pages (Control entities). A web resource
+Thus from the IFabrikator CMS's point of view there are pages (Page entities in program code and DB),
+which represent a site's structure, and controls placed on these pages (Control entities). A web resource
 functionality is determined by presence of controls of different types attached to pages.
 
 
