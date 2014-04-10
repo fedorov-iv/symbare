@@ -21,9 +21,9 @@ class LoadControlData extends AbstractFixture implements OrderedFixtureInterface
 
 
         $control = new Control();
-        $control->setTitle('Новости на главную страницу');
+        $control->setTitle('Main Page News');
         $control->setCode('main_page_news');
-        $control->setDescription('Новости на главную страницу');
+        $control->setDescription('Main Page News');
         $control->addPage($this->getReference('main_page'));
         $control->setClassName('IFabrikatorCoreBundle:MainPageNews:index');
         $control->setIsActive(true);
@@ -36,9 +36,9 @@ class LoadControlData extends AbstractFixture implements OrderedFixtureInterface
 
 
         $control = new Control();
-        $control->setTitle('Карта сайта');
+        $control->setTitle('Site Map');
         $control->setCode('sitemap');
-        $control->setDescription('Карта сайта');
+        $control->setDescription('Site Map');
         $control->addPage($this->getReference('map_page'));
         $control->setClassName('IFabrikatorCoreBundle:SiteMap:index');
         $control->setIsActive(true);

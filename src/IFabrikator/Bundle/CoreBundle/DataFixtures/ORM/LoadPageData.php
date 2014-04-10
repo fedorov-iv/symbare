@@ -24,7 +24,7 @@ class LoadPageData extends AbstractFixture implements OrderedFixtureInterface{
     public function load(ObjectManager $manager){
 
         $page = new Page();
-        $page->setTitle('Главная страница');
+        $page->setTitle('Main page');
         $page->setSite($this->getReference('main_site'));
         $page->setSlug('/');
         $page->setUrl('/');
@@ -39,7 +39,7 @@ class LoadPageData extends AbstractFixture implements OrderedFixtureInterface{
 
 
         $newsPage = new Page();
-        $newsPage->setTitle('Новости');
+        $newsPage->setTitle('News');
         $newsPage->setSite($this->getReference('main_site'));
         $newsPage->setParent($this->getReference('main_page'));
         $newsPage->setSlug('news');
@@ -55,7 +55,7 @@ class LoadPageData extends AbstractFixture implements OrderedFixtureInterface{
 
 
         $mapPage = new Page();
-        $mapPage->setTitle('Карта сайта');
+        $mapPage->setTitle('Site Map');
         $mapPage->setSite($this->getReference('main_site'));
         $mapPage->setParent($this->getReference('main_page'));
         $mapPage->setSlug('sitemap');
@@ -70,7 +70,7 @@ class LoadPageData extends AbstractFixture implements OrderedFixtureInterface{
         $this->addReference('map_page', $mapPage);
 
         $mapPage = new Page();
-        $mapPage->setTitle('Административный интерфейс');
+        $mapPage->setTitle('Administration');
         $mapPage->setSite($this->getReference('main_site'));
         $mapPage->setParent($this->getReference('main_page'));
         $mapPage->setSlug('backend');

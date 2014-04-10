@@ -20,28 +20,28 @@ class LoadNewsData extends AbstractFixture implements OrderedFixtureInterface {
 
 
         $news = new News();
-        $news->setTitle('Новость 1');
-        $news->setAnnounce('Анонс тестовой новости 1');
+        $news->setTitle('News 1');
+        $news->setAnnounce('News 1 announce');
         $news->setCreatedAt(new \DateTime());
-        $news->setBody('Полный текст тестовой новости 1');
+        $news->setBody('News 1 body text');
         $news->setIsActive(true);
         $manager->persist($news);
         $manager->flush();
 
         $news = new News();
-        $news->setTitle('Новость 2');
-        $news->setAnnounce('Анонс тестовой новости 2');
+        $news->setTitle('News 2');
+        $news->setAnnounce('News 2 announce');
         $news->setCreatedAt(new \DateTime());
-        $news->setBody('Полный текст тестовой новости 2');
+        $news->setBody('News 2 body text');
         $news->setIsActive(true);
         $manager->persist($news);
         $manager->flush();
 
         $news = new News();
         $news->setTitle('Новость 3');
-        $news->setAnnounce('Анонс тестовой новости 3');
+        $news->setAnnounce('News 3 announce');
         $news->setCreatedAt(new \DateTime());
-        $news->setBody('Полный текст тестовой новости 3');
+        $news->setBody('News 3 body text');
         $news->setIsActive(true);
         $manager->persist($news);
         $manager->flush();

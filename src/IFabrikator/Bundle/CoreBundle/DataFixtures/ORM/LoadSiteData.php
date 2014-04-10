@@ -20,7 +20,7 @@ class LoadSiteData extends AbstractFixture implements OrderedFixtureInterface{
      */
     public function load(ObjectManager $manager){
         $site = new Site();
-        $site->setTitle('Тестовый сайт фабрикатора');
+        $site->setTitle('Test site');
         $site->setHost('symbare.ifedor.loc');
         $site->setIsDefault(true);
         $site->setIsActive(true);
