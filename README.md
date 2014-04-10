@@ -1,18 +1,34 @@
-Symfony Standard Edition
+IFabrikator CMS Core
 ========================
 
-Welcome to the Symfony Standard Edition - a fully-functional Symfony2
-application that you can use as the skeleton for your new applications.
+Welcome to the IFabrikator CMS Core - a basic concept project for
+building CMS applications based on Symfony 2 Standard Edition
 
-This document contains information on how to download, install, and start
-using Symfony. For a more detailed explanation, see the [Installation][1]
-chapter of the Symfony Documentation.
 
-1) Installing the Standard Edition
+1) Basic concepts
 ----------------------------------
 
-When it comes to installing the Symfony Standard Edition, you have the
-following options.
+Any internet based application or a site can be looked at as a hierarchical list of
+web pages (sections and subsections). A web page is a very simple structure consisting of:
+
+  * Page title
+
+  * Meta-keywords and meta-description tags
+
+  * Breadcrumbs
+
+  * Menus
+
+  * One or several content areas
+
+The appearance  of a web page is determined by an html-template and css files.
+
+Thus a web page at data level can be easily presented by a number of database
+table fields:
+
+
+2) Installation
+-------------------------------------
 
 ### Use Composer (*recommended*)
 
@@ -42,26 +58,20 @@ following command:
 
     php composer.phar install
 
-2) Checking your System Configuration
--------------------------------------
+After finishing it you will have to create a database and put its connection parameters into parameters.yml
+(must be first created from parameters.yml.dist)
 
-Before starting coding, make sure that your local system is properly
-configured for Symfony.
+Then create database tables:
 
-Execute the `check.php` script from the command line:
+    php app/console doctrine:schema:update --force
 
-    php app/check.php
+And load the project fixtures:
 
-The script returns a status code of `0` if all mandatory requirements are met,
-`1` otherwise.
+    php app/console doctrine:fixtures:load
 
-Access the `config.php` script from a browser:
+Create a virtual host in your web-server config with the name of symbare.ifedor.loc (comes with fixtures)
 
-    http://localhost/path/to/symfony/app/web/config.php
-
-If you get any warnings or recommendations, fix them before moving on.
-
-3) Browsing the Demo Application
+3) And some more
 --------------------------------
 
 Congratulations! You're now ready to use Symfony.
